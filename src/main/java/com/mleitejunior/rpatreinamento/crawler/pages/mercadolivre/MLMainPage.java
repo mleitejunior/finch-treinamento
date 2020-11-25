@@ -1,47 +1,38 @@
 package com.mleitejunior.rpatreinamento.crawler.pages.mercadolivre;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import lombok.NoArgsConstructor;
 
-import java.util.List;
-
+@NoArgsConstructor
 public class MLMainPage {
-    public WebDriver driver;
 
-    public MLMainPage(WebDriver driver) {
-        this.driver = driver;
+    String searchInputField = "//header/div[1]/form[1]/input[1]";
+    String innerInputFieldSearchButton = "//header/div[1]/form[1]/button[1]/div[1]";
+    String cookiesConfirmButton = "//span[@class='andes-tooltip-button-close']";
+    String informCepCloseButton = "//button[@id='cookieDisclaimerButton']";
+    String searchItemsContainers = "//li[@class='ui-search-layout__item']";
+    String nextPageButton = "//span[@class='andes-pagination__arrow-title'][contains(text(),'Próxima')]";
+
+    public String getSearchInputField() {
+        return searchInputField;
     }
 
-    By searchInputField = By.xpath("//header/div[1]/form[1]/input[1]");
-    By innerInputFieldSearchButton = By.xpath("//header/div[1]/form[1]/button[1]/div[1]");
-
-    By cookiesConfirmButton = By.xpath("//span[@class='andes-tooltip-button-close']");
-    By informeCepCloseButton = By.xpath("//button[@id='cookieDisclaimerButton']");
-
-    By searchItemsContainers = By.xpath("//li[@class='ui-search-layout__item']");
-
-
-    By nextPageButton = By.xpath("//span[@class='andes-pagination__arrow-title'][contains(text(),'Próxima')]");
-
-
-    public WebElement getSearchInputField() {
-        return driver.findElement(searchInputField);
-    }
-    public WebElement getInnerInputFieldSearchButton() {
-        return driver.findElement(innerInputFieldSearchButton);
-    }
-    public WebElement getCookiesConfirmButton() {
-        return driver.findElement(cookiesConfirmButton);
-    }
-    public WebElement getInformeCepCloseButton() {
-        return driver.findElement(informeCepCloseButton);
-    }
-    public WebElement getNextPageButton() {
-        return driver.findElement(nextPageButton);
+    public String getInnerInputFieldSearchButton() {
+        return innerInputFieldSearchButton;
     }
 
-    public List<WebElement> getSearchItemsContainers() {
-        return driver.findElements(searchItemsContainers);
+    public String getCookiesConfirmButton() {
+        return cookiesConfirmButton;
+    }
+
+    public String getInformCepCloseButton() {
+        return informCepCloseButton;
+    }
+
+    public String getSearchItemsContainers() {
+        return searchItemsContainers;
+    }
+
+    public String getNextPageButton() {
+        return nextPageButton;
     }
 }

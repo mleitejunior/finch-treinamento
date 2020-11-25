@@ -9,5 +9,4 @@ public class RpaTreinamentoApplication {
     public static void main(String[] args) {
         SpringApplication.run(RpaTreinamentoApplication.class, args);
     }
-
 }
